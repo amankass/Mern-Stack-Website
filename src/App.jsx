@@ -8,6 +8,7 @@ import Hearder from './Component/Header'
 import House from './Pages/House'
 import Car from './Pages/Car'   
 import Contact from './Pages/Contact'
+import UserSignUp from './Pages/UserSignUp'
 
 export default function App() { 
   return <BrowserRouter> 
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />}/>
         <Route path="about" element={<About />}/>
         <Route path="sign-in" element={<SignIn />}/>
+        <Route path="User-sign-up" element={<UserSignUp />}/>
         <Route path="sign-up" element={<SignUp />}/>
         <Route path="profile" element={<Profile />}/>
         <Route path="House" element={<House />}/>

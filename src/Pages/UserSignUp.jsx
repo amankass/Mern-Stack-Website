@@ -1,34 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const SignUp = () => {
+const UserSignUp = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
-  const [experience, setExperience] = useState('');
-  const [licenseFile, setLicenseFile] = useState(null);
+  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted:", { firstName, lastName, password, confirmPassword, gender, email, experience, licenseFile });
+    console.log("Form submitted:", { firstName, lastName, password, confirmPassword, gender, email, city,  });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setLicenseFile(file);
-  };
- 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-max">
-        <form onSubmit={handleSubmit} className="shadow-md bg-slate-300 rounded-lg max-w-screen-2x2 p-5 m-5 mx-20 mr-9">
-          <h1 className="text-3xl font-bold text-center mb-8">Register As Broker</h1>
+      <form onSubmit={handleSubmit} className="shadow-md bg-slate-300 rounded-lg max-w-screen-2x2 p-5 m-5 mx-20 mr-9">
+          <h1 className="text-3xl font-bold text-center mb-8">Register As User</h1>
           <div className="flex flex-wrap mx-4 -mr-48 ml-72">
-            <div className="w-full md:w-1/2 px-24 mb-4">
+          <div className="w-full md:w-1/2 px-24 mb-4">
               <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
                 First Name *
               </label>
@@ -51,8 +47,7 @@ const SignUp = () => {
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Last Name"
               />
-            </div>
-            <div className="w-full md:w-1/2 px-24 mb-4">
+            </div> <div className="w-full md:w-1/2 px-24 mb-4">
               <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
                 Password *
               </label>
@@ -157,36 +152,7 @@ const SignUp = () => {
                 </div>
               </div>
             </div>
-
-            <div className="w-full md:w-1/2 px-24 mb-4">
-            <label htmlFor="experience" className="block text-gray-700 font-bold mb-2">
-              Experience
-            </label>
-            <select
-              id="experience"
-              value={experience}
-              onChange={(e) => setExperience(e.target.value)}
-              className="block border border-gray-300 w-full md:w-3/4 p-3 rounded">
-              <option value="">Select Experience</option>
-              <option value="1 years">1 Years</option>
-              <option value="2 years">2 Years</option>
-              <option value="3 years">3 Years</option>
-              <option value="3 years">4 Years</option>
-              <option value="3 years">5 Years</option>
-            </select>
-        </div>
-<div className="w-full md:w-1/2 px-24 mb-4">
-            <label htmlFor="licenseFile" className="block text-gray-700 font-bold mb-2">
-              Upload License (PDF or Image)
-            </label>
-            <input
-              type="file"
-              id="licenseFile"
-              accept=".pdf, image/*"
-              onChange={handleFileChange}
-              className="block border border-gray-300 w-full md:w-3/4 p-3 rounded"/>
           </div>
-        </div>
           <div className="mb-4 flex justify-center items-center">
             <button type="submit" className="bg-blue-600 justify-center w-64 text-white p-2 rounded-md hover:bg-red-600 font-bold -mr-48 ml-72">Register</button>
           </div>
@@ -202,4 +168,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default UserSignUp;
