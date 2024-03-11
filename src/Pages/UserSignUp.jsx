@@ -151,6 +151,7 @@ const UserSignUp = () => {
                   <label htmlFor="female" className="text-gray-700 font-medium">Female</label>
                 </div>
               </div>
+
             </div>
           </div>
           <div className="mb-4 flex justify-center items-center">
